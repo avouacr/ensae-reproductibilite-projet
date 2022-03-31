@@ -6,7 +6,7 @@ from src.models.train_evaluate import evaluate_rdmf
 
 
 if __name__ == "__main__":
-    training_data, test_data = import_clean_data("data/raw")
+    training_data, test_data = import_clean_data("avouacr", "ensae-reproductibilite")
 
     mean_age = round(training_data['Age'].mean())
     training_data = feature_engineering(training_data, mean_age)

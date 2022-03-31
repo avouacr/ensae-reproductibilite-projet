@@ -1,10 +1,22 @@
 """Import raw data."""
 import os
+
+import s3fs
 import pandas as pd
 
 
-def import_clean_data(dir_data):
+def import_clean_data(bucket, dir_data):
     "Import raw data."
-    training_data = pd.read_csv(os.path.join(dir_data, 'train.csv'))
-    test_data = pd.read_csv(os.path.join(dir_data, 'test.csv'))
+    # Create filesystem object
+    S3_ENDPOINT_URL = "https://" + os.environ["AWS_S3_ENDPOINT"]
+    fs = s3fs.S3FileSystem(client_kwargs={'endpoint_url': S3_ENDPOINT_URL})
+
+    # Import data in pandas
+    train_path = os.path.join(bucket, dir_data, "train.csv")
+    test_path = os.path.join(bucket, dir_data, "test.csv")
+    with fs.open(train_path, mode="rb") as file_in:
+        training_data = pd.read_csv(file_in)
+    with fs.open(test_path, mode="rb") as file_in:
+        test_data = pd.read_csv(file_in)
+
     return training_data, test_data
