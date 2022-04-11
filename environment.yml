@@ -3,7 +3,8 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - python=3.10.0
   - pandas==1.4.1
   - PyYAML==6.0
   - s3fs==2022.2.0
-  - scikit_learn==1.0.2
+  - scikit-learn==1.0.2
