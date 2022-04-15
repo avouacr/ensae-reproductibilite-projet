@@ -1,0 +1,3 @@
+minio:
+  bucket: avouacr
+  path: diffusion/ensae-reproductibilite
