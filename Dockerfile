@@ -25,4 +25,4 @@ EXPOSE 5000
 ENV PATH="/miniconda/envs/monenv/bin:${PATH}"
 
 # Launch Python script at container startup
-CMD [ "python", "main.py"]
+CMD ["python", "main.py"]
