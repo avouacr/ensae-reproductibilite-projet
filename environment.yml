@@ -1,4 +1,4 @@
-name: monenv2
+name: monenv
 channels:
   - conda-forge
   - defaults
