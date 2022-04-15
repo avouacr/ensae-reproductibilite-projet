@@ -1,0 +1,3 @@
+minio-urls:
+  train: https://minio.lab.sspcloud.fr/avouacr/diffusion/ensae-reproductibilite/train.csv
+  test: https://minio.lab.sspcloud.fr/avouacr/diffusion/ensae-reproductibilite/test.csv
